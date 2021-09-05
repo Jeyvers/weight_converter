@@ -13,7 +13,12 @@ let selectOptions = document.getElementById('selectOptions');
 
 selectOptions.addEventListener('change', getSelectedValue);
 
+function clearFields(){
+    document.querySelector('#gramsOutput').innerHTML = '';
+    document.querySelector('#kgOutput').innerHTML = '';
+    document.querySelector('#ozOutput').innerHTML = '';
 
+}
 
 
 
@@ -58,9 +63,13 @@ function getSelectedValue (){
         ozInput.classList.remove('active')
         document.querySelector('#ozOutputText').innerHTML = 'Ounces:'
     }
+
+    clearFields(); 
 }
 
 getSelectedValue();
+
+
 
 
 
@@ -113,6 +122,7 @@ function ozConvert(e){
     document.querySelector('#ozOutput').innerHTML =oz/ 15;
 
 };
+
 
 
 // A COMPILATION OF ALL TRIALS BEFORE I GOT IT
