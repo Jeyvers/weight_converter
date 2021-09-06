@@ -1,5 +1,7 @@
+// Set the output areas to nothing until there's an input event. 
+document.getElementById('output').style.visibility = 'hidden'
 
-
+//Declaration of all inputs
 const lbsInput = document.querySelector('#lbsInput');
 
 const kgInput = document.querySelector('#kgInput');
@@ -9,10 +11,14 @@ const gramsInput = document.querySelector('#gramsInput');
 const ozInput = document.querySelector('#ozInput');
 
 
+// Get the select id
 let selectOptions = document.getElementById('selectOptions');
+
+// Add the event listener (change - when you change the select option), and the function it should run when that change occurs 
 
 selectOptions.addEventListener('change', getSelectedValue);
 
+// Clear fields function to set the output sections to a clean state when there's a change of selectOptons. Without this, if the user converts one weight to another, and changes the selectOption, the result of the previous change will remain.
 function clearFields(){
     document.querySelector('#gramsOutput').innerHTML = '';
     document.querySelector('#kgOutput').innerHTML = '';
@@ -21,9 +27,10 @@ function clearFields(){
 }
 
 
-
+// Implemnet the function getSelectedValue which will run when there's a change(This function was added in the selectOptions area.) 
 function getSelectedValue (){
    
+    // Individual implementation of each option. WHen the user changes an option, the value of that option equals something (one of the weight values(check HTML)). So if the value equals ..., do this, else this. 
     if(selectOptions.value == 'pounds'){
         lbsInput.classList.add('active')
             lbsInput.addEventListener('input', lbsConvert);
@@ -63,9 +70,10 @@ function getSelectedValue (){
         ozInput.classList.remove('active')
         document.querySelector('#ozOutputText').innerHTML = 'Ounces:'
     }
-
+    // Run the clearFields function when there's a change as well. 
     clearFields(); 
 }
+
 
 getSelectedValue();
 
@@ -74,11 +82,14 @@ getSelectedValue();
 
 
        
-
+// All the function which will run if an if function is met. 
 function lbsConvert(e){
    
     document.getElementById('output').style.visibility = 'visible'
+    // This gets the value the user inputs 
    let lbs = e.target.value;
+
+   // Mathematical equation.
     document.querySelector('#gramsOutput').innerHTML = lbs*453.59237;
 
     document.querySelector('#kgOutput').innerHTML = lbs/2.2046;
