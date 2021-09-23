@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top: 70px;
+            background: #333;
+            color: #fff;
+        }
+
+        .span-text {
+            font-size: 22px;
+            font-weight: lighter;
+            padding: 5px 0px ;
+            margin-bottom: 20px;
+            border-bottom: white solid 1px;
+
+        }
+    </style>
+    <title>Weight Converter</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="display-4 text-center "> 
+                    Weight Converter</h1>
+                <h3 class="display-7 text-center span-text">Kilograms, Grams & Ounces</h3>
+                <form>
+                    <div class="form-group">
+            
+        <select class="form-select mb-2" id="selectOptions">
+                        </select>
+
+
+            <input 
+            type="number" 
+            class="form-control form-control-lg mb-2"
+            placeholder="Enter Weight" 
+            id="weightInput">
+
+               
+                    </div>
+                </form>
+                <div id="output">
+                    <div class="p-2 card bg-primary mb-2">
+                    <div class="card-block">
+                        <h4 id="gramsOutputText">Grams:</h4>
+                        <div id="gramsOutput">
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2 card bg-success mb-2">
+                    <div class="card-block">
+                        <h4 id="kgOutputText">Kilograms:</h4>
+                        <div id="kgOutput">
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2 card bg-danger mb-2">
+                    <div class="card-block">
+                        <h4 id="ozOutputText">Ounces:</h4>
+                        <div id="ozOutput">
+                        </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assignment.js"></script>
+</body>
+</html>
