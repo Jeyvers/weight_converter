@@ -2,7 +2,7 @@
 document.getElementById('output').style.visibility = 'hidden';
 
 // Get DOM elements
-let selectOptions = document.getElementById('selectOptions');
+let selectOptions = document.getElementById('selectLevel');
 let weightInput = document.getElementById('weightInput');
 let gramsOutput = document.querySelector('#gramsOutput');
 let kgOutput = document.querySelector('#kgOutput');
